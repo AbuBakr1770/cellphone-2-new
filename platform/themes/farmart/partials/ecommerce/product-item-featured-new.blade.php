@@ -16,7 +16,7 @@
         <div class="img-fluid-eq__dummy"></div>
         <div class="img-fluid-eq__wrap">
             <img class="lazyload product-thumbnail__img"
-                 
+
                  src="{{ image_placeholder($product->image, 'small') }}"
                  data-src="{{ RvMedia::getImageUrl($product->image, 'small', false, RvMedia::getDefaultImage()) }}"
                  alt="{{ $product->name }}
