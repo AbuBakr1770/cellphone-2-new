@@ -148,19 +148,30 @@
                                         @endif
 
 
+
+
+
                                         <div
+
                                             class="catagory-text-box d-flex flex-column justify-content-center align-items-center">
                                             <div class="catagory-text-name">
 
-                                                <div class="">
-                                                    <h3 class="p-0 m-0">Head Phone</h3>
+                                                    <div class="">
+                                                        <a href="">
+                                                        <h3 class="p-0 m-0">Head Phone</h3>
 
-                                                    <p class="text-white p-0 m-0"> Premium Collection</p>
-                                                </div>
+                                                        </a>
+
+                                                        <p class="text-white p-0 m-0"> Premium Collection</p>
+                                                    </div>
+
+
 
 
                                             </div>
                                         </div>
+
+
 
                                     </div>
 
@@ -201,12 +212,20 @@
                                                 @if ($slider->link) </a>
                                         @endif
 
+
+
+
+
+
                                             <div
                                                 class="catagory-text-box d-flex flex-column justify-content-center align-items-center">
                                                 <div class="catagory-text-name">
 
                                                     <div class="">
+                                                        <a href="3">
                                                         <h3 class="p-0 m-0">Smart Watches</h3>
+
+                                                        </a>
 
                                                         <p class="text-white p-0 m-0"> Premium Collection</p>
                                                     </div>
@@ -214,6 +233,7 @@
 
                                                 </div>
                                             </div>
+
 
                                     </div>
 

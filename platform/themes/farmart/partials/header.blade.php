@@ -53,62 +53,62 @@
 
 <header class="header header-js-handler"
         data-sticky="{{ theme_option('sticky_header_enabled', 'yes') == 'yes' ? 'true' : 'false' }}">
-    <div class="header-top d-none d-lg-block">
-        <div class="container-xxxl">
-            <div class="row align-items-center">
-                <div class="col-6">
-                    <div class="header-info">
-                        {!! Menu::renderMenuLocation('header-navigation', ['view' => 'menu-default']) !!}
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="header-info header-info-right">
-                        <ul>
-                            @if (is_plugin_active('language'))
-                                {!! Theme::partial('language-switcher') !!}
-                            @endif
-                            @if (is_plugin_active('ecommerce'))
-                                @if (count($currencies) > 1)
-                                    <li>
-                                        <a class="language-dropdown-active" href="#">
-                                            <span>{{ get_application_currency()->title }}</span>
-                                            <span class="svg-icon">
-                                                        <svg>
-                                                            <use href="#svg-icon-chevron-down"
-                                                                 xlink:href="#svg-icon-chevron-down"></use>
-                                                        </svg>
-                                                    </span>
-                                        </a>
-                                        <ul class="language-dropdown">
-                                            @foreach ($currencies as $currency)
-                                                @if ($currency->id !== get_application_currency_id())
-                                                    <li>
-                                                        <a href="{{ route('public.change-currency', $currency->title) }}">
-                                                            <span>{{ $currency->title }}</span>
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                @endif
-                                @if (auth('customer')->check())
-                                    <li>
-                                        <a href="{{ route('customer.overview') }}">{{ auth('customer')->user()->name }}</a>
-                                        <span class="d-inline-block ms-1">(<a href="{{ route('customer.logout') }}"
-                                                                              class="color-primary">{{ __('Logout') }}</a>)</span>
-                                    </li>
-                                @else
-                                    <li><a href="{{ route('customer.login') }}">{{ __('Login') }}</a></li>
-                                    <li><a href="{{ route('customer.register') }}">{{ __('Register') }}</a></li>
-                                @endif
-                            @endif
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="header-top d-none d-lg-block">--}}
+{{--        <div class="container-xxxl">--}}
+{{--            <div class="row align-items-center">--}}
+{{--                <div class="col-6">--}}
+{{--                    <div class="header-info">--}}
+{{--                        {!! Menu::renderMenuLocation('header-navigation', ['view' => 'menu-default']) !!}--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-6">--}}
+{{--                    <div class="header-info header-info-right">--}}
+{{--                        <ul>--}}
+{{--                            @if (is_plugin_active('language'))--}}
+{{--                                {!! Theme::partial('language-switcher') !!}--}}
+{{--                            @endif--}}
+{{--                            @if (is_plugin_active('ecommerce'))--}}
+{{--                                @if (count($currencies) > 1)--}}
+{{--                                    <li>--}}
+{{--                                        <a class="language-dropdown-active" href="#">--}}
+{{--                                            <span>{{ get_application_currency()->title }}</span>--}}
+{{--                                            <span class="svg-icon">--}}
+{{--                                                        <svg>--}}
+{{--                                                            <use href="#svg-icon-chevron-down"--}}
+{{--                                                                 xlink:href="#svg-icon-chevron-down"></use>--}}
+{{--                                                        </svg>--}}
+{{--                                                    </span>--}}
+{{--                                        </a>--}}
+{{--                                        <ul class="language-dropdown">--}}
+{{--                                            @foreach ($currencies as $currency)--}}
+{{--                                                @if ($currency->id !== get_application_currency_id())--}}
+{{--                                                    <li>--}}
+{{--                                                        <a href="{{ route('public.change-currency', $currency->title) }}">--}}
+{{--                                                            <span>{{ $currency->title }}</span>--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                @endif--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                @endif--}}
+{{--                                @if (auth('customer')->check())--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ route('customer.overview') }}">{{ auth('customer')->user()->name }}</a>--}}
+{{--                                        <span class="d-inline-block ms-1">(<a href="{{ route('customer.logout') }}"--}}
+{{--                                                                              class="color-primary">{{ __('Logout') }}</a>)</span>--}}
+{{--                                    </li>--}}
+{{--                                @else--}}
+{{--                                    <li><a href="{{ route('customer.login') }}">{{ __('Login') }}</a></li>--}}
+{{--                                    <li><a href="{{ route('customer.register') }}">{{ __('Register') }}</a></li>--}}
+{{--                                @endif--}}
+{{--                            @endif--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="header-middle">
         <div class="container-xxxl">
             <div class="header-wrapper">
@@ -238,11 +238,29 @@
                                 </div>
 
                             </div>
-                            <div class="login-buttons mx-2">
-                                <button class="btn btn-outline-light text-dark">Sign in</button>
-                                <button class="btn btn-warning text-white">Sign up</button>
 
-                            </div>
+                        <div class="m-2 d-flex">
+                            @if (auth('customer')->check())
+                                <li style="list-style: none;">
+                                    <a class="btn btn-warning" href="{{ route('customer.overview') }}">{{ auth('customer')->user()->name }}</a>
+                                    <span class="d-inline-block ms-1">(<a href="{{ route('customer.logout') }}"
+                                                                          class="color-primary">{{ __('Logout') }}</a>)</span>
+                                </li>
+                            @else
+                                <li style="list-style: none"><a class="btn btn-outline-light text-dark m-2" href="{{ route('customer.login') }}">Sign in</a></li>
+                                <li style="list-style: none"><a class="btn btn-warning text-white m-2" href="{{ route('customer.register') }}">Sign up</a></li>
+                            @endif
+
+                        </div>
+
+
+
+
+{{--                            <div class="login-buttons mx-2">--}}
+{{--                                <button class="btn btn-outline-light text-dark">Sign in</button>--}}
+{{--                                <button class="btn btn-warning text-white">Sign up</button>--}}
+
+{{--                            </div>--}}
                         @endif
                     @endif
                 </div>

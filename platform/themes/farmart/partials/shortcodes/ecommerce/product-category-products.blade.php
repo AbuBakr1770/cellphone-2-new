@@ -1,6 +1,8 @@
 
 
-{{--<h1>Lorem ipsum dolor sit amet.</h1>--}}
+{{--*************************************************************--}}
+{{--Ye new arrival product ki blade file ha--}}
+{{--*************************************************************--}}
 @if ($category)
     <div class="widget-products-with-category py-5 bg-light">
         <div class="container-xxxl">
@@ -11,6 +13,7 @@
 {{--                        <h2 class="col-auto mb-0 py-2">{{ $shortcode->title ?: $category->name }}</h2>--}}
                     </div>
                     <product-category-products-component
+                        class="yooo"
                         limit="{{ $shortcode->limit }}"
                         :category="{{ json_encode($category) }}"
                         :children="{{ json_encode($category->activeChildren) }}"
@@ -26,20 +29,20 @@
                             'infinite' => $shortcode->infinite == 'yes' || $shortcode->is_infinite == 'yes',
                             'autoplaySpeed' => in_array($shortcode->autoplay_speed, theme_get_autoplay_speed_options()) ? $shortcode->autoplay_speed : 3000,
                             'speed' => 800,
-                            'slidesToShow' => 6,
+                            'slidesToShow' => 4,
                             'slidesToScroll' => 1,
                             'swipeToSlide' => true,
                             'responsive' => [
                                 [
                                     'breakpoint' => 1400,
                                     'settings' => [
-                                        'slidesToShow' => 5,
+                                        'slidesToShow' => 4,
                                     ],
                                 ],
                                 [
                                     'breakpoint' => 1199,
                                     'settings' => [
-                                        'slidesToShow' => 4,
+                                        'slidesToShow' => 3,
                                     ],
                                 ],
                                 [
@@ -54,7 +57,17 @@
                                         'arrows' => true,
                                         'dots' => false,
                                         'slidesToShow' => 2,
-                                        'slidesToScroll' => 2,
+                                        'slidesToScroll' => 1,
+                                    ],
+                                ],
+
+                                 [
+                                    'breakpoint' => 470,
+                                    'settings' => [
+                                        'arrows' => true,
+                                        'dots' => false,
+                                        'slidesToShow' => 1,
+                                        'slidesToScroll' => 1,
                                     ],
                                 ],
                             ],

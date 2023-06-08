@@ -13,9 +13,10 @@
                 <div
                     v-for="item in data"
                     :key="item.id"
-                    class="product-inner demo-class"
+                    class="product-inner"
                     v-html="item"
                 ></div>
+
             </div>
             <div class="arrows-wrapper"></div>
         </div>
@@ -43,6 +44,9 @@ export default {
     },
 
     props: {
+        testProp: {
+            type: String
+        },
         category: {
             type: Object,
             default: () => {},

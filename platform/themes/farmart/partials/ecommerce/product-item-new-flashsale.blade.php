@@ -1,5 +1,5 @@
 {{--<h1>flash sale </h1>--}}
-<div class="product-thumbnail">
+<div class="product-thumbnail flash-sale-product">
     <a class="product-loop__link img-fluid-eq" href="{{ $product->url }}" tabindex="0">
         <div class="img-fluid-eq__dummy"></div>
         <div class="img-fluid-eq__wrap">
@@ -35,7 +35,7 @@
     {!! Theme::partial('ecommerce.product-loop-buttons', compact('product') + (!empty($wishlistIds) ? compact('wishlistIds') : [])) !!}
 </div>
 <div class="product-details product-details-flash-sale position-relative">
-    <div class="product-content-box">
+    <div class="product-content-box product-content-box-flash-sale">
         @if (is_plugin_active('marketplace') && $product->store->id)
             <div class="sold-by-meta">
                 <a href="{{ $product->store->url }}" tabindex="0">{{ $product->store->name }}</a>

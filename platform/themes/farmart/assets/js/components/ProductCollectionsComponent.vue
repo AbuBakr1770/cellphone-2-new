@@ -1,5 +1,5 @@
 <template>
-    
+
     <div>
         <div class="product-deals-day__body arrows-top-right"
             v-infinite-scroll="getData"

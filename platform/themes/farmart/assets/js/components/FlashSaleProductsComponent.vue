@@ -10,7 +10,7 @@
                 v-lazyload
                 class="product-deals-day-body slick-slides-carousel"
                 :data-slick="slick_config">
-                <div v-for="item in data" :key="item.id" class="product-inner" v-html="item"></div>
+                <div v-for="item in data" :key="item.id" class="product-inner demo3" v-html="item"></div>
             </div>
             <div class="arrows-wrapper"></div>
         </div>

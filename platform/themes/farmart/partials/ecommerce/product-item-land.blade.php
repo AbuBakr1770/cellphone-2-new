@@ -1,4 +1,7 @@
-<div class="product-thumbnail">
+<div class="product-thumbnail new-arrival-product">
+{{--    *****************************************************************--}}
+{{--    <h1>ye new arrival product hain </h1>--}}
+{{--    ******************************************************************--}}
     <a class="product-loop__link img-fluid-eq" href="{{ $product->url }}" tabindex="0">
         <div class="img-fluid-eq__dummy"></div>
         <div class="img-fluid-eq__wrap">
@@ -47,15 +50,29 @@
         {!! Theme::partial('ecommerce.product-price', compact('product')) !!}
         @if (EcommerceHelper::isReviewEnabled())
             <div class="d-flex justify-content-center align-items-center">
-            {!! Theme::partial('star-rating', ['avg' => $product->reviews_avg, 'count' => $product->reviews_count]) !!}
+{{--            {!! Theme::partial('star-rating', ['avg' => $product->reviews_avg, 'count' => $product->reviews_count]) !!}--}}
+                <div class="d-flex  justify-content-between">
+                    <div class="d-flex mx-3">
+                        <i class="bi bi-star-fill text-warning"></i>
 
+                        <p class="ms-3">3.4</p>
+                    </div>
+
+                    <div class="mx-3">
+
+                    <p>20 sold</p>
+
+                    </div>
+
+
+                </div>
             </div>
 {{--            {!! Theme::partial('star-rating', ['avg' => $product->reviews_avg, 'count' => $product->reviews_count]) !!}--}}
 
         @endif
 
 
-                    <div class="product-bottom-box">
+                    <div class="product-bottom-box product-bottom-box-new-arrival">
                         {!! Theme::partial('ecommerce.product-cart-form', compact('product')) !!}
                     </div>
         @if (!empty($isFlashSale))
