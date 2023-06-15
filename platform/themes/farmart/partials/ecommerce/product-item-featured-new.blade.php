@@ -21,9 +21,8 @@
 
                          src="{{ image_placeholder($product->image, 'small') }}"
                          data-src="{{ RvMedia::getImageUrl($product->image, 'small', false, RvMedia::getDefaultImage()) }}"
-                         alt="{{ $product->name }}
-
-                 ">
+                         alt="{{ $product->name }}"
+                    >
                 </div>
                 <span class="ribbons">
             @if ($product->isOutOfStock())
@@ -51,33 +50,33 @@
         </div>
         <div class="product-details position-relative">
             <div class="product-content-box">
-                <div class="d-flex justify-content-center" style="padding-top: 15px;padding-right: 11px">
-                    <div class="mx-4">
-                        <div class="text-center">
-                            <h6>24</h6>
-                        </div>
+                {{--<div class="d-flex justify-content-center" style="padding-top: 15px;padding-right: 11px">--}}
+                    {{--<div class="mx-4">--}}
+                        {{--<div class="text-center">--}}
+                            {{--<h6>24</h6>--}}
+                        {{--</div>--}}
 
-                        <p>Days</p>
-                    </div>
+                        {{--<p>Days</p>--}}
+                    {{--</div>--}}
 
-                    <div class="mx-4">
-                        <div class="text-center">
-                            <h6>24</h6>
-                        </div>
-                        <p>Hrs</p>
-                    </div>
+                    {{--<div class="mx-4">--}}
+                        {{--<div class="text-center">--}}
+                            {{--<h6>24</h6>--}}
+                        {{--</div>--}}
+                        {{--<p>Hrs</p>--}}
+                    {{--</div>--}}
 
-                    <div class="mx-4">
-                        <div class="text-center">
-                            <h6>24</h6>
-                        </div>
-                        <p>Min</p>
-                    </div>
-
-
+                    {{--<div class="mx-4">--}}
+                        {{--<div class="text-center">--}}
+                            {{--<h6>24</h6>--}}
+                        {{--</div>--}}
+                        {{--<p>Min</p>--}}
+                    {{--</div>--}}
 
 
-                </div>
+
+
+                {{--</div>--}}
                 @if (is_plugin_active('marketplace') && $product->store->id)
                     <div class="sold-by-meta">
                         <a href="{{ $product->store->url }}" tabindex="0">{{ $product->store->name }}</a>

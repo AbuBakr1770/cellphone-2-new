@@ -50,22 +50,23 @@
         {!! Theme::partial('ecommerce.product-price', compact('product')) !!}
         @if (EcommerceHelper::isReviewEnabled())
             <div class="d-flex justify-content-center align-items-center">
-{{--            {!! Theme::partial('star-rating', ['avg' => $product->reviews_avg, 'count' => $product->reviews_count]) !!}--}}
+            {{--{!! Theme::partial('star-rating', ['avg' => $product->reviews_avg, 'count' => $product->reviews_count]) !!}--}}
                 <div class="d-flex  justify-content-between">
-                    <div class="d-flex mx-3">
-                        <i class="bi bi-star-fill text-warning"></i>
 
-                        <p class="ms-3">3.4</p>
-                    </div>
+                <div class="d-flex mx-3">
+                    <i class="bi bi-star-fill text-warning"></i>
 
-                    <div class="mx-3">
+                    <p class="ms-3">{{number_format($product->reviews_avg,1)}}</p>
+                </div>
 
-                    <p>20 sold</p>
+                <div class="mx-3">
 
-                    </div>
-
+                    {{--<p>20 sold</p>--}}
 
                 </div>
+
+
+            </div>
             </div>
 {{--            {!! Theme::partial('star-rating', ['avg' => $product->reviews_avg, 'count' => $product->reviews_count]) !!}--}}
 

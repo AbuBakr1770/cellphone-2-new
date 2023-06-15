@@ -104,7 +104,7 @@
 
                                     <div class="slider-content">
                                         <h3 class="text-white">Mobile Phones</h3>
-                                        <a href="#" class="btn btn-warning">Shop Now</a>
+                                        <a href="{{$slider->link}}" class="btn btn-warning">Shop Now</a>
                                     </div>
 
 
@@ -222,7 +222,7 @@
                                                 <div class="catagory-text-name">
 
                                                     <div class="">
-                                                        <a href="3">
+                                                        <a href="">
                                                         <h3 class="p-0 m-0">Smart Watches</h3>
 
                                                         </a>

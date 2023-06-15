@@ -58,8 +58,24 @@
 
                     </div>
 
+<?php
+            $products = get_featured_products([
+                    'take' => 2,
+                    'with' => [
+                        'slugable',
+                        'variations',
+                        'productCollections',
+                        'variationAttributeSwatchesForProductList',
+                    ],
+                ] + EcommerceHelper::withReviewsParams());
+
+?>
+
             <div class="col-md-6 ">
                 <div class="row">
+                    @if($products)
+                        @foreach($products as $product)
+                            <a class="product-loop__link img-fluid-eq" href="{{ $product->url }}" tabindex="0">
                     <div class="col-lg-12 col-md-12" style="width: 100%;">
                         <div class="">
                             <div class="row">
@@ -67,45 +83,22 @@
                                     <div class="card" style="border-radius: 17px;height: 13rem">
                                         <div class="card-horizontal" style="display: flex;flex: 1 1 auto;">
                                             <div class="img-square-wrapper" style="width: 45%">
-                                                <img class="h-100"  src="http://via.placeholder.com/300x180" alt="Card image cap">
+                                                <img class="lazyload h-100 fluid"
+                                                     src="{{ image_placeholder($product->image, 'small') }}"
+                                                     data-src="{{ RvMedia::getImageUrl($product->image, 'small', false, RvMedia::getDefaultImage()) }}"
+                                                     alt="{{ $product->name }}"
+                                                >
                                             </div>
                                             <div class="card-body p-0 d-flex justify-content-center align-items-center">
                                                 <div class="">
                                                     <div class="bg-warning text-dark">
-                                                        <p class="text-center"
-                                                           style="font-weight: bolder;padding: 3px;
+                                                        {{--<p class="text-center"--}}
+                                                           {{--style="font-weight: bolder;padding: 3px;--}}
 
-                                                           ">Limited Offer</p></div>
-                                                    <h4 class="card-title">Product Title</h4>
-                                                    <h5 class="card-text">DHS. 799</h5>
-
-                                                    <div class="d-flex justify-content-between" style="padding-top: 15px;padding-right: 11px">
-                                                        <div class="">
-                                                            <div class="text-center">
-                                                                <h6>24</h6>
-                                                            </div>
-
-                                                            <p>Days</p>
-                                                        </div>
-
-                                                        <div class="">
-                                                            <div class="text-center">
-                                                                <h6>24</h6>
-                                                            </div>
-                                                            <p>Hrs</p>
-                                                        </div>
-
-                                                        <div class="">
-                                                            <div class="text-center">
-                                                                <h6>24</h6>
-                                                            </div>
-                                                            <p>Min</p>
-                                                        </div>
-
-
-
-
+                                                           {{--">Limited Offer</p>--}}
                                                     </div>
+                                                    <h4 class="card-title">{{$product->name}}</h4>
+                                                    <h5 class="card-text">{{$product->price}}</h5>
                                                 </div>
 
 
@@ -120,61 +113,9 @@
                         </div>
 
                     </div>
-
-                    <div class="col-lg-12 col-md-12 mt-4" style="width: 100%;">
-                        <div class="card" style="border-radius: 17px;height: 13rem">
-                            <div class="card-horizontal" style="display: flex;flex: 1 1 auto;">
-                                <div class="img-square-wrapper" style="width: 45%">
-                                    <img class="h-100"  src="http://via.placeholder.com/300x180" alt="Card image cap">
-                                </div>
-                                <div class="card-body p-0 d-flex justify-content-center align-items-center">
-                                    <div class="">
-                                        <div class="bg-warning text-dark">
-                                            <p class="text-center"
-                                               style="font-weight: bolder;padding: 3px;
-
-                                                           ">Limited Offer</p></div>
-                                        <h4 class="card-title">Product Title</h4>
-                                        <h5 class="card-text">DHS. 799</h5>
-
-                                        <div class="d-flex justify-content-between" style="padding-top: 15px;padding-right: 11px">
-                                            <div class="">
-                                                <div class="text-center">
-                                                    <h6>24</h6>
-                                                </div>
-
-                                                <p>Days</p>
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center">
-                                                    <h6>24</h6>
-                                                </div>
-                                                <p>Hrs</p>
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center">
-                                                    <h6>24</h6>
-                                                </div>
-                                                <p>Min</p>
-                                            </div>
-
-
-
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
 

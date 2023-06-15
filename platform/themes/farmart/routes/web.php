@@ -67,6 +67,11 @@ Route::group(['controller' => FarmartController::class, 'middleware' => ['web', 
                 'as' => 'featured-products-new',
             ]);
 
+            Route::get('featured-products/newSection', [
+                'uses' => 'ajaxGetFeaturedProductsnewSection',
+                'as' => 'featured-products-newSection',
+            ]);
+
             Route::get('cart', [
                 'uses' => 'ajaxCart',
                 'as' => 'cart',

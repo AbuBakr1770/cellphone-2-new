@@ -12,6 +12,7 @@
                         <h2 class="col-auto mb-0 py-2">New Arrival</h2>
 {{--                        <h2 class="col-auto mb-0 py-2">{{ $shortcode->title ?: $category->name }}</h2>--}}
                     </div>
+
                     <product-category-products-component
                         class="yooo"
                         limit="{{ $shortcode->limit }}"

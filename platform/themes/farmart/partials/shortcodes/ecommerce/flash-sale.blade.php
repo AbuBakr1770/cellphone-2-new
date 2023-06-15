@@ -25,7 +25,7 @@
                                     <h6>Sale ends in:</h6>
 {{--                                    Count Down Wrapper    --}}
                                     <div class="countdown-wrapper col-auto ps-md-5 py-2">
-                                        <div class="header-countdown row align-items-center justify-content-center gx-2">
+                                        <div class=" row align-items-center justify-content-center gx-2">
                                             <div class="ends-text col-auto">
 {{--                                                <div class="d-flex align-items-center justify-content-center">--}}
 {{--                                        <span class="svg-icon">--}}
@@ -34,43 +34,44 @@
 {{--                                                    {{ __('Expires in') }}:--}}
 {{--                                                </div>--}}
                                             </div>
-
-                                            <div class="expire-countdown col-auto"
+                                            <div class="expire-countdown d-flex justify-content-between"
                                                  data-expire="{{ now()->diffInSeconds($flashSale->end_date) }}">
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="new-count-down-wrapper">
-                                        <div class="d-flex justify-content-between ">
-                                            <div class="new-count-down-wrapper-time">
-                                                <h5 class="m-0 p-0 text-warning">21</h5>
-                                                <p class="m-0 p-0 text-white">Days</p>
-                                            </div>
-
-                                            <div class="new-count-down-wrapper-time">
-                                                <h5 class="m-0 p-0 text-warning">22</h5>
-                                                <p class="m-0 p-0 text-white">Hrs</p>
-                                            </div>
-
-                                            <div class="new-count-down-wrapper-time">
-                                                <h5 class="m-0 p-0 text-warning">22</h5>
-                                                <p class="m-0 p-0 text-white">Mins</p>
-                                            </div>
-
-                                            <div class="new-count-down-wrapper-time">
-                                                <h5 class="m-0 p-0 text-warning">22</h5>
-                                                <p class="m-0 p-0 text-white">Sec</p>
-                                            </div>
 
                                         </div>
                                     </div>
+
+                                    {{--<div class="new-count-down-wrapper">--}}
+                                        {{--<div class="d-flex justify-content-between ">--}}
+
+                                            {{--<div class="new-count-down-wrapper-time">--}}
+                                                {{--<h5 class="m-0 p-0 text-warning">21</h5>--}}
+                                                {{--<p class="m-0 p-0 text-white">Days</p>--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="new-count-down-wrapper-time">--}}
+                                                {{--<h5 class="m-0 p-0 text-warning">22</h5>--}}
+                                                {{--<p class="m-0 p-0 text-white">Hrs</p>--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="new-count-down-wrapper-time">--}}
+                                                {{--<h5 class="m-0 p-0 text-warning">22</h5>--}}
+                                                {{--<p class="m-0 p-0 text-white">Mins</p>--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="new-count-down-wrapper-time">--}}
+                                                {{--<h5 class="m-0 p-0 text-warning">22</h5>--}}
+                                                {{--<p class="m-0 p-0 text-white">Sec</p>--}}
+                                            {{--</div>--}}
+
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
 
                                     <div class="">
                                         <h3>Everyday discount up to 30% off</h3>
                                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ipsum iusto optio unde.</p>
-                                        <a href="#" class="btn btn-warning text-dark">Shop Now</a>
+                                        <a href="{{ route('public.products') }}" class="btn btn-warning text-dark">Shop Now</a>
                                     </div>
 
                                 </div>

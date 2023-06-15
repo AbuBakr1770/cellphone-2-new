@@ -194,11 +194,12 @@ class FarmartController extends PublicController
                     }
 
                     return $query
-                        ->where('status', BaseStatusEnum::PUBLISHED)
+                       ->where('status', BaseStatusEnum::PUBLISHED)
                         ->withCount($reviewParams['withCount']);
                 },
             ])
             ->first();
+
 
         if (!$flashSale) {
             return $this->httpResponse->setData([]);
@@ -267,7 +268,6 @@ class FarmartController extends PublicController
 
         return $this->httpResponse->setData($data);
     }
-
     public function ajaxGetProductsByCategoryId(
         Request                  $request,
         ProductInterface         $productRepository,
@@ -325,8 +325,9 @@ class FarmartController extends PublicController
                 'take' => (int)$request->input('limit', 10),
             ] + EcommerceHelper::withReviewsParams());
 
-        $wishlistIds = $this->getWishlistIds($products->pluck('id')->all());
 
+
+        $wishlistIds = $this->getWishlistIds($products->pluck('id')->all());
         $data = [];
         foreach ($products as $product) {
             $data[] = Theme::partial('ecommerce.product-item-land', compact('product', 'wishlistIds'));
